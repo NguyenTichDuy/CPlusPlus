@@ -2,8 +2,8 @@
 class MyPoint
 {
 private:
-	int PosX;
-	int PosY;
+	int posX;
+	int posY;
 public:
 
 	//------Constructor-------
@@ -21,6 +21,6 @@ public:
 
 	//------Funtion member----
 	void Display();
-	float Distance(MyPoint *p);
+	float Distance(MyPoint p);
 };
 
