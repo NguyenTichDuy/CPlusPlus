@@ -5,6 +5,7 @@ private:
 	int posX;
 	int posY;
 public:
+	virtual void Text();
 
 	//------Constructor-------
 	MyPoint(int _x, int _y);
@@ -21,6 +22,7 @@ public:
 
 	//------Funtion member----
 	void Display();
-	float Distance(MyPoint p);
+	double Distance(MyPoint p);
 };
+
 

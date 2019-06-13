@@ -1,11 +1,15 @@
 #include "MyPoint.h"
 #include<iostream>
-
+#include"juniorPoint.h"
 
 MyPoint::MyPoint()
 {
 	this->posX = 0;
 	this->posY = 0;
+}
+void MyPoint::Text()
+{
+	std::cout << "Thang Cha" << std::endl;
 }
 MyPoint::MyPoint(int _x, int _y)
 {
@@ -56,9 +60,10 @@ void MyPoint::Display()
 {
 	std::cout << "Position X: " << posX << std::endl;
 	std::cout << "Position Y: " << posY << std::endl;
+
 }
 
-float MyPoint::Distance(MyPoint p)
+double MyPoint::Distance(MyPoint p)
 {
 	return sqrt(pow((p.posX - this->posX), 2) + pow((p.posY - this->posY), 2));
 }

@@ -110,9 +110,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="juniorPoint.h" />
     <ClInclude Include="MyPoint.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="juniorPoint.cpp" />
     <ClCompile Include="MyPoint.cpp" />
     <ClCompile Include="TextClass.cpp" />
   </ItemGroup>
