@@ -18,6 +18,13 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="VirusClass.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="TextMyOOPImplement.cpp" />
+    <ClCompile Include="VirusClass.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{21919B25-B87F-42EB-AFCE-B74EEF262741}</ProjectGuid>
     <RootNamespace>WriteVirus</RootNamespace>
@@ -109,8 +116,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
