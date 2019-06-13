@@ -19,9 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="FluVirusClass.h" />
     <ClInclude Include="VirusClass.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="FluVirusClass.cpp" />
     <ClCompile Include="TextMyOOPImplement.cpp" />
     <ClCompile Include="VirusClass.cpp" />
   </ItemGroup>

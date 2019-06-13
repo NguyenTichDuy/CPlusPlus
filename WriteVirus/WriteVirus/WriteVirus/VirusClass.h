@@ -17,5 +17,11 @@ public:
 
 	void LoadADNInformation();
 	void ReduceResistance(int medicine_resistance);
+
+	virtual void DoBorn() = 0;
+	virtual VirusClass *DoClone() = 0;
+	virtual void DoDie() = 0;
+	virtual void InitResistance() = 0;
 };
+
 
