@@ -22,7 +22,7 @@ void MyPoint::SetX(int _x)
 {
 	if (typeid(_x).name() == typeid(int).name())
 	{
-		posX = _x;
+		this->posX = _x;
 	}
 	else
 	{
@@ -39,7 +39,7 @@ void MyPoint::SetY(int _y)
 {
 	if (typeid(_y).name() == typeid(int).name())
 	{
-		posX = _y;
+		this->posY = _y;
 	}
 	else
 	{
@@ -60,5 +60,5 @@ void MyPoint::Display()
 
 float MyPoint::Distance(MyPoint p)
 {
-	return 0;
+	return sqrt(pow((p.posX - this->posX), 2) + pow((p.posY - this->posY), 2));
 }

@@ -12,7 +12,7 @@ public:
 	//------Destructor--------
 	~MyPoint();
 	
-	//------Pack--------------
+	//------Packed--------------
 	void SetX(int _x);
 	int GetX();
 
