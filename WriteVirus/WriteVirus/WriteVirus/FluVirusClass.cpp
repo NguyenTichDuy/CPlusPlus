@@ -2,7 +2,7 @@
 
 const int _red = 0x000ff;
 const int _blue = 0xff0000;
-FluVirusClass *fluVirusCopy;
+VirusClass **fluVirusCopyPtr;
 
 FluVirusClass::FluVirusClass()
 {
@@ -45,7 +45,7 @@ void FluVirusClass::DoBorn()
 
 	srand(time(NULL));
 
-	if (rand()% 2 +  1 == 1)
+	if (rand()% 2  == 1)
 	{
 		m_color = _red;
 	}
@@ -55,18 +55,21 @@ void FluVirusClass::DoBorn()
 	}
 }
 
-VirusClass * FluVirusClass::DoClone()
+VirusClass ** FluVirusClass::DoClone()
 {
-	fluVirusCopy = new FluVirusClass(this);
-	return fluVirusCopy;
+	VirusClass *fluVirusCopy = new FluVirusClass(this);
+
+	fluVirusCopyPtr = &fluVirusCopy;
+
+	return fluVirusCopyPtr;
 }
 
 void FluVirusClass::DoDie()
 {
-	if (fluVirusCopy != nullptr)
+	if (*fluVirusCopyPtr != nullptr)
 	{
-		delete fluVirusCopy;
-		fluVirusCopy = nullptr;
+		delete *fluVirusCopyPtr;
+		*fluVirusCopyPtr = nullptr;
 	}
 }
 
@@ -75,6 +78,7 @@ void FluVirusClass::InitResistance()
 	int set = 10;
 	int red = 20;
 	int blue = 15;
+	srand(time(NULL));
 	if (this->m_color == _red)
 	{
 		this->m_resistance = (rand() % (red - set + 1) + set);

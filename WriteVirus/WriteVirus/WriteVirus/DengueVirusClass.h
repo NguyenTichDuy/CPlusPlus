@@ -14,7 +14,7 @@ public:
 	DengueVirusClass(DengueVirusClass *dengueVirus);
 
 	void DoBorn() override;
-	VirusClass *DoClone() override;
+	VirusClass **DoClone() override;
 	void DoDie() override;
 	void InitResistance() override;
 };

@@ -1,8 +1,5 @@
 #pragma once
-#include<iostream>
 #include"VirusClass.h"
-#include<stdlib.h>
-#include<time.h>
 
 class FluVirusClass :public VirusClass
 {
@@ -17,7 +14,7 @@ public:
 	int GetColor();
 
 	void DoBorn() override;
-	VirusClass *DoClone() override;
+	VirusClass **DoClone() override;
 	void DoDie() override;
 	void InitResistance() override;
 };

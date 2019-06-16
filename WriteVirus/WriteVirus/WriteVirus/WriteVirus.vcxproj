@@ -21,11 +21,13 @@
   <ItemGroup>
     <ClInclude Include="DengueVirusClass.h" />
     <ClInclude Include="FluVirusClass.h" />
+    <ClInclude Include="PatientClass.h" />
     <ClInclude Include="VirusClass.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DengueVirusClass.cpp" />
     <ClCompile Include="FluVirusClass.cpp" />
+    <ClCompile Include="PatientClass.cpp" />
     <ClCompile Include="TextMyOOPImplement.cpp" />
     <ClCompile Include="VirusClass.cpp" />
   </ItemGroup>

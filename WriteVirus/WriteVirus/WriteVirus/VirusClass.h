@@ -1,4 +1,7 @@
 #pragma once
+#include<iostream>
+#include<time.h>
+
 class VirusClass
 {
 protected:
@@ -19,7 +22,7 @@ public:
 	void ReduceResistance(int medicine_resistance);
 
 	virtual void DoBorn() = 0;
-	virtual VirusClass *DoClone() = 0;
+	virtual VirusClass **DoClone() = 0;
 	virtual void DoDie() = 0;
 	virtual void InitResistance() = 0;
 };

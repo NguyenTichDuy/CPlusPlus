@@ -1,5 +1,4 @@
 #include "VirusClass.h"
-#include <iostream>
 #include <fstream>
 #include <string>
 
@@ -63,7 +62,7 @@ void VirusClass::LoadADNInformation()
 
 	if (input.is_open())
 	{
-		input.getline(m_dna, 100, '\0');
+		input.getline(m_dna, 1000, '\0');
 	}
 	else
 	{
