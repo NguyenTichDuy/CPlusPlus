@@ -1,5 +1,9 @@
 #pragma once
+#include<iostream>
 #include"VirusClass.h"
+#include<stdlib.h>
+#include<time.h>
+
 class FluVirusClass :public VirusClass
 {
 private:

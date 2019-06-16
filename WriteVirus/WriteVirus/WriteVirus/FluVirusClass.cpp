@@ -1,10 +1,8 @@
-#include<iostream>
 #include "FluVirusClass.h"
-#include<stdlib.h>
-#include<time.h>
 
 const int _red = 0x000ff;
 const int _blue = 0xff0000;
+FluVirusClass *fluVirusCopy;
 
 FluVirusClass::FluVirusClass()
 {
@@ -14,14 +12,14 @@ FluVirusClass::FluVirusClass()
 
 FluVirusClass::FluVirusClass(FluVirusClass * _fluVirus)
 {
-	this->SetColor(_fluVirus->m_color);
-	this->SetDna(_fluVirus->GetDna());
-	this->SetResistance(_fluVirus->GetResistance());
+	this->m_color = _fluVirus->m_color;
+	this->m_dna = _fluVirus->m_dna;
+	this->m_resistance = _fluVirus->m_resistance;
 }
 
 FluVirusClass::~FluVirusClass()
 {
-	delete FluVirusClass::DoClone();
+	DoDie();
 }
 
 void FluVirusClass::SetColor(int _m_color)
@@ -59,14 +57,17 @@ void FluVirusClass::DoBorn()
 
 VirusClass * FluVirusClass::DoClone()
 {
-	FluVirusClass *newFluVirus = new FluVirusClass(this);
-
-	return newFluVirus;
+	fluVirusCopy = new FluVirusClass(this);
+	return fluVirusCopy;
 }
 
 void FluVirusClass::DoDie()
 {
-	FluVirusClass::~FluVirusClass();
+	if (fluVirusCopy != nullptr)
+	{
+		delete fluVirusCopy;
+		fluVirusCopy = nullptr;
+	}
 }
 
 void FluVirusClass::InitResistance()
@@ -76,10 +77,10 @@ void FluVirusClass::InitResistance()
 	int blue = 15;
 	if (this->m_color == _red)
 	{
-		this->SetResistance(rand() % (red - set + 1) + set);
+		this->m_resistance = (rand() % (red - set + 1) + set);
 	}
 	else
 	{
-		this->SetResistance(rand() % (blue - set + 1) + set);
+		this->m_resistance = (rand() % (blue - set + 1) + set);
 	}
 }
