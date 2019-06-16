@@ -18,9 +18,22 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DengueVirusClass.h" />
+    <ClInclude Include="FluVirusClass.h" />
+    <ClInclude Include="PatientClass.h" />
+    <ClInclude Include="VirusClass.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DengueVirusClass.cpp" />
+    <ClCompile Include="FluVirusClass.cpp" />
+    <ClCompile Include="PatientClass.cpp" />
+    <ClCompile Include="TextMyOOPImplement.cpp" />
+    <ClCompile Include="VirusClass.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{F3695B56-2EE5-44E9-9E01-307D872FD77E}</ProjectGuid>
-    <RootNamespace>WriteClass</RootNamespace>
+    <ProjectGuid>{21919B25-B87F-42EB-AFCE-B74EEF262741}</ProjectGuid>
+    <RootNamespace>WriteVirus</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -109,15 +122,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="juniorPoint.h" />
-    <ClInclude Include="MyPoint.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="juniorPoint.cpp" />
-    <ClCompile Include="MyPoint.cpp" />
-    <ClCompile Include="TextClass.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -15,21 +15,33 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MyPoint.h">
+    <ClInclude Include="VirusClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="juniorPoint.h">
+    <ClInclude Include="FluVirusClass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DengueVirusClass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PatientClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="MyPoint.cpp">
+    <ClCompile Include="VirusClass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TextClass.cpp">
+    <ClCompile Include="TextMyOOPImplement.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="juniorPoint.cpp">
+    <ClCompile Include="FluVirusClass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DengueVirusClass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PatientClass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
