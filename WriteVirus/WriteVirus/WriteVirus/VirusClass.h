@@ -16,7 +16,7 @@ public:
 	char *GetDna();
 
 	void SetResistance(int _m_resistance);
-	int GetResistance();
+	virtual int GetResistance();
 
 	void LoadADNInformation();
 	void ReduceResistance(int medicine_resistance);

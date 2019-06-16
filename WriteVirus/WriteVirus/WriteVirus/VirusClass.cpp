@@ -51,7 +51,7 @@ void VirusClass::SetResistance(int _m_resistance)
 
 int VirusClass::GetResistance()
 {
-	return m_resistance;
+	return this->m_resistance;
 }
 
 void VirusClass::LoadADNInformation()
@@ -79,3 +79,4 @@ void VirusClass::ReduceResistance(int medicine_resistance)
 		std::cout << "Virus was detroyed" << std::endl;
 	}
 }
+

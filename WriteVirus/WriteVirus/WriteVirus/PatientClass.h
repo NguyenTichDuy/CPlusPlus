@@ -3,7 +3,8 @@
 #include<list>
 class PatientClass :public VirusClass
 {
-private:
+protected:
+	int m_resistance;
 	std::list<VirusClass*> m_virusList;
 	int m_state;
 public:
@@ -11,10 +12,13 @@ public:
 	~PatientClass();
 
 	void InitResistance() override;
-	void DoStart();
-	void TakeMedicine();
-	void ReduceResistance(int _m_resistance);
+	VirusClass **DoClone() override;
+	void DoBorn() override;
 	void DoDie() override;
+
+	void DoStart();
+	void TakeMedicine(int medicine_resistance);
 	int GetState();
+	int GetResistance() override;
 };
 

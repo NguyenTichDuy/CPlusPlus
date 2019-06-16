@@ -17,7 +17,7 @@ int sumResistanceOfVirus = 0;
 PatientClass::PatientClass()
 {
 	this->InitResistance();
-
+	this->DoStart();
 }
 
 PatientClass::~PatientClass()
@@ -29,6 +29,15 @@ void PatientClass::InitResistance()
 {
 	srand(time(NULL));
 	this->m_resistance = rand() % (endResistance - startResistance + 1) + startResistance;
+}
+
+VirusClass ** PatientClass::DoClone()
+{
+	return nullptr;
+}
+
+void PatientClass::DoBorn()
+{
 }
 
 void PatientClass::DoStart()
@@ -49,7 +58,7 @@ void PatientClass::DoStart()
 	this->m_state = 1;
 }
 
-void PatientClass::TakeMedicine()
+void PatientClass::TakeMedicine(int medicine_resistance)
 {
 	if (this->m_resistance < sumResistanceOfVirus)
 	{
@@ -60,7 +69,7 @@ void PatientClass::TakeMedicine()
 	for (iter = m_virusList.begin(); iter != m_virusList.end(); ++iter)
 	{
 		VirusClass *virus = *iter;
-		virus->ReduceResistance((rand() % (endReduceResistance - startReduceResistance + 1) + startReduceResistance));
+		virus->ReduceResistance(medicine_resistance);
 		if (virus->GetResistance() > 0)
 		{
 			sumResistanceOfVirus = virus->GetResistance();
@@ -83,4 +92,9 @@ void PatientClass::DoDie()
 int PatientClass::GetState()
 {
 	return m_state;
+}
+
+int PatientClass::GetResistance()
+{
+	return this->m_resistance;
 }
