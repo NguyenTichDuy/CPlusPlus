@@ -14,7 +14,7 @@ public:
 
 	void DoBorn() override;
 	VirusClass *DoClone() override;
-	 void DoDie() override;
-	 void InitResistance() override;
+	void DoDie() override;
+	void InitResistance() override;
 };
 
