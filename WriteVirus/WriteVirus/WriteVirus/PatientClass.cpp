@@ -10,8 +10,8 @@ const short endVirus = 20;
 const short	startReduceResistance = 1;
 const short endReduceResistance = 60;
 int sumRandom = (endVirus - startVirus + 1) + startVirus;
-
 std::list<VirusClass *>::iterator iter;
+
 int sumResistanceOfVirus = 0;
 
 PatientClass::PatientClass()
@@ -23,12 +23,18 @@ PatientClass::PatientClass()
 PatientClass::~PatientClass()
 {
 	DoDie();
+	for (auto v : m_virusList)
+	{
+		delete v;
+	}
+	m_virusList.clear();
 }
 
 void PatientClass::InitResistance()
 {
 	srand(time(NULL));
 	this->m_resistance = rand() % (endResistance - startResistance + 1) + startResistance;
+	std::cout << "Resistance patient : " << m_resistance << std::endl;
 }
 
 VirusClass ** PatientClass::DoClone()
@@ -60,33 +66,44 @@ void PatientClass::DoStart()
 
 void PatientClass::TakeMedicine(int medicine_resistance)
 {
-	if (this->m_resistance < sumResistanceOfVirus)
-	{
-		this->DoDie();
-	}
+	std::cout << "Take medicine: " << medicine_resistance << std::endl;
 	
-
-	for (iter = m_virusList.begin(); iter != m_virusList.end(); ++iter)
+	iter = m_virusList.begin();
+	while (iter != m_virusList.end())
 	{
 		VirusClass *virus = *iter;
 		virus->ReduceResistance(medicine_resistance);
 		if (virus->GetResistance() > 0)
 		{
 			sumResistanceOfVirus = virus->GetResistance();
+
+			m_virusList.push_front(*(virus->DoClone()));
+			++iter;
 		}
+		else
+		{
+			iter = m_virusList.erase(iter);
+			//delete virus;
+		}
+	}
+	std::cout << "Virus size: " << m_virusList.size() << std::endl;
+
+	if (this->m_resistance < sumResistanceOfVirus)
+	{
+		std::cout << "The patient is die!!!!!" << std::endl;
+		DoDie();
+	}
+
+	if (sumResistanceOfVirus <= 0)
+	{
+		std::cout << "All virus is die!!!!!" << std::endl;
+		DoDie();
 	}
 }
 
 void PatientClass::DoDie()
 {
-	if (*iter != nullptr)
-	{
-		for (iter = this->m_virusList.begin(); iter != this->m_virusList.end(); ++iter)
-		{
-			delete *iter;
-		}
-		*iter = nullptr;
-	}
+	m_state = 0;
 }
 
 int PatientClass::GetState()
