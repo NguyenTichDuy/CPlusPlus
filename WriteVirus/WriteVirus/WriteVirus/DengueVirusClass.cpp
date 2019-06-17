@@ -4,6 +4,7 @@
 const int SizeOfString = 3;
 VirusClass **dengueVirusCopyPtr;
 const int numNewVirus = 2;
+VirusClass *dengueVirusCopy[numNewVirus];
 
 //---------Type of protein-------
 char *proteinNS3 = "NS3";
@@ -86,7 +87,7 @@ void DengueVirusClass::DoBorn()
 
 VirusClass **DengueVirusClass::DoClone()
 {
-	VirusClass *dengueVirusCopy[2];
+	
 	for (int i = 0; i < numNewVirus; i++)
 	{
 		dengueVirusCopy[i] = new DengueVirusClass(this);

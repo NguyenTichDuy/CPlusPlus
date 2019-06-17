@@ -14,8 +14,8 @@ int main()
 		cin >> t;
 		if(t == 1)
 		{
-			int min = 1;
-			int max = 3;
+			int min = 30;
+			int max = 60;
 			int _medicine_resistance = min + (rand() % (int)(max - min + 1));
 			p.TakeMedicine(_medicine_resistance);
 		}

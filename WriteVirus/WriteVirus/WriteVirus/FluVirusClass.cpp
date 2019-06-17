@@ -3,6 +3,7 @@
 const int _red = 0x000ff;
 const int _blue = 0xff0000;
 VirusClass **fluVirusCopyPtr;
+VirusClass *fluVirusCopy;
 
 FluVirusClass::FluVirusClass()
 {
@@ -59,7 +60,7 @@ void FluVirusClass::DoBorn()
 
 VirusClass ** FluVirusClass::DoClone()
 {
-	VirusClass *fluVirusCopy = new FluVirusClass(this);
+	fluVirusCopy = new FluVirusClass(this);
 
 	fluVirusCopyPtr = &fluVirusCopy;
 	std::cout << "Flu virus is clone!!!" << std::endl;
