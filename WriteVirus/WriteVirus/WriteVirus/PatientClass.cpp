@@ -1,6 +1,7 @@
 #include "PatientClass.h"
 #include"FluVirusClass.h"
 #include"DengueVirusClass.h"
+#include<Windows.h>
 
 //---------Set to random-------------
 const short startResistance = 1000;
@@ -49,9 +50,10 @@ void PatientClass::DoBorn()
 void PatientClass::DoStart()
 {
 	int random = rand() % 2;
-
+	
 	for (int  i = 0; i < sumRandom; i++)
 	{
+		Sleep(100);
 		if (random == 0)
 		{
 			this->m_virusList.push_back(new FluVirusClass);
@@ -61,6 +63,7 @@ void PatientClass::DoStart()
 			this->m_virusList.push_back(new DengueVirusClass);
 		}
 	}
+	std::cout << "\nSum virus : " << sumRandom << "\n" << std::endl;
 	this->m_state = 1;
 }
 
@@ -71,6 +74,7 @@ void PatientClass::TakeMedicine(int medicine_resistance)
 	iter = m_virusList.begin();
 	while (iter != m_virusList.end())
 	{
+		Sleep(50);
 		VirusClass *virus = *iter;
 		virus->ReduceResistance(medicine_resistance);
 		if (virus->GetResistance() > 0)
@@ -94,7 +98,7 @@ void PatientClass::TakeMedicine(int medicine_resistance)
 		DoDie();
 	}
 
-	if (sumResistanceOfVirus <= 0)
+	if (m_virusList.size() == 0)
 	{
 		std::cout << "All virus is die!!!!!" << std::endl;
 		DoDie();

@@ -1,6 +1,7 @@
 #include"FluVirusClass.h"
 #include"DengueVirusClass.h"
 #include"PatientClass.h"
+#include<Windows.h>
 using namespace std;
 
 
@@ -14,8 +15,8 @@ int main()
 		cin >> t;
 		if(t == 1)
 		{
-			int min = 30;
-			int max = 60;
+			int min = 10;
+			int max = 20;
 			int _medicine_resistance = min + (rand() % (int)(max - min + 1));
 			p.TakeMedicine(_medicine_resistance);
 		}
