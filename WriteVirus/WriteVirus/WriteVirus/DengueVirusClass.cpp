@@ -80,6 +80,8 @@ void DengueVirusClass::DoBorn()
 		std::cout << "Wrong protein!!!!" << std::endl;
 		break;
 	}
+	std::cout << "Dengue virus is born!!!!!" << std::endl;
+	std::cout << "Dengue Virus:" << m_protein << std::endl;
 }	
 
 VirusClass **DengueVirusClass::DoClone()
@@ -90,6 +92,8 @@ VirusClass **DengueVirusClass::DoClone()
 		dengueVirusCopy[i] = new DengueVirusClass(this);
 	}
 	dengueVirusCopyPtr = dengueVirusCopy;
+	std::cout << "New Dengue virus are clone" << std::endl;
+
 	return dengueVirusCopyPtr;
 }
 
@@ -99,6 +103,7 @@ void DengueVirusClass::DoDie()
 	{
 		delete[] *dengueVirusCopyPtr;
 		*dengueVirusCopyPtr = nullptr;
+		std::cout << "Virus dengue is detroys" << std::endl;
 	}
 }
 
@@ -120,4 +125,5 @@ void DengueVirusClass::InitResistance()
 	{
 		std::cout << "Fail to random !!!\nCan't to see protein!!!" << std::endl;
 	}
+	std::cout << "Initialization resistance of virus : " << m_resistance << std::endl;
 }

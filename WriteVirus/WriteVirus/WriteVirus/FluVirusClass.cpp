@@ -53,6 +53,8 @@ void FluVirusClass::DoBorn()
 	{
 		m_color = _blue;
 	}
+	std::cout << "Flu virus is born!!!!!!" << std::endl;
+	std::cout << "Color virus is " << m_color << std::endl;
 }
 
 VirusClass ** FluVirusClass::DoClone()
@@ -60,7 +62,7 @@ VirusClass ** FluVirusClass::DoClone()
 	VirusClass *fluVirusCopy = new FluVirusClass(this);
 
 	fluVirusCopyPtr = &fluVirusCopy;
-
+	std::cout << "Flu virus is clone!!!" << std::endl;
 	return fluVirusCopyPtr;
 }
 
@@ -71,6 +73,7 @@ void FluVirusClass::DoDie()
 		delete *fluVirusCopyPtr;
 		*fluVirusCopyPtr = nullptr;
 	}
+	std::cout << "Flu virus is die" << std::endl;
 }
 
 void FluVirusClass::InitResistance()
@@ -87,4 +90,5 @@ void FluVirusClass::InitResistance()
 	{
 		this->m_resistance = (rand() % (blue - set + 1) + set);
 	}
+	std::cout << "Initialization Flu virus : " << m_resistance << std::endl;
 }
