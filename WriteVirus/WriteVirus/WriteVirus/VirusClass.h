@@ -10,7 +10,7 @@ protected:
 public:
 	VirusClass();
 	VirusClass(char *_m_dna, int _m_resistance);
-	~VirusClass();
+	virtual ~VirusClass();
 
 	void SetDna(char *_m_dna);
 	char *GetDna();
