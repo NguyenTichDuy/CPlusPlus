@@ -100,12 +100,7 @@ VirusClass **DengueVirusClass::DoClone()
 
 void DengueVirusClass::DoDie()
 {
-	if (*dengueVirusCopyPtr != nullptr)
-	{
-		delete[] *dengueVirusCopyPtr;
-		*dengueVirusCopyPtr = nullptr;
 		std::cout << "Virus dengue is detroys" << std::endl;
-	}
 }
 
 void DengueVirusClass::InitResistance()

@@ -20,7 +20,7 @@ FluVirusClass::FluVirusClass(FluVirusClass * _fluVirus)
 
 FluVirusClass::~FluVirusClass()
 {
-	DoDie();
+	this->DoDie();
 }
 
 void FluVirusClass::SetColor(int _m_color)
@@ -69,11 +69,6 @@ VirusClass ** FluVirusClass::DoClone()
 
 void FluVirusClass::DoDie()
 {
-	if (*fluVirusCopyPtr != nullptr)
-	{
-		delete *fluVirusCopyPtr;
-		*fluVirusCopyPtr = nullptr;
-	}
 	std::cout << "Flu virus is die" << std::endl;
 }
 

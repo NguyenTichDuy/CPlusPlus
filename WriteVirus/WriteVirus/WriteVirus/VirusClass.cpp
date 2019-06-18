@@ -76,7 +76,7 @@ void VirusClass::ReduceResistance(int medicine_resistance)
 	m_resistance = m_resistance - medicine_resistance;
 	if (m_resistance <= 0)
 	{
-		std::cout << "Virus was detroyed" << std::endl;
+		std::cout << "Resistance virus : 0" << std::endl;
 	}
 }
 
