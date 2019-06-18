@@ -17,13 +17,12 @@ int main()
 		cin >> t;
 		if(t == 1)
 		{
-			int min = 1;
-			int max = 10;
+			int min = 30;
+			int max = 60;
 			int _medicine_resistance = min + (rand() % (int)(max - min + 1));
 			p.TakeMedicine(_medicine_resistance);
 		}
 	}
-	//cout << typeid(FluVirusClass*).name() << endl;
 
 	system("pause");
 }

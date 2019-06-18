@@ -14,7 +14,11 @@ FluVirusClass::FluVirusClass()
 FluVirusClass::FluVirusClass(FluVirusClass * _fluVirus)
 {
 	this->m_color = _fluVirus->m_color;
-	*this->m_dna = *_fluVirus->m_dna;
+	std::string str = _fluVirus->m_dna;
+	for (int i = 0;i < str.size();i++)
+	{
+		this->m_dna[i] = str[i];
+	}
 	this->m_resistance = _fluVirus->m_resistance;
 }
 

@@ -87,7 +87,7 @@ void PatientClass::TakeMedicine(int medicine_resistance)
 		}
 	}
 	std::cout << "Virus size: " << m_virusList.size() << std::endl;
-
+	//std::cout << "Sum resistance Virus: " << sumResistanceOfVirus << std::endl;
 	if (this->m_resistance < sumResistanceOfVirus)
 	{
 		std::cout << "The patient is die!!!!!" << std::endl;

@@ -58,7 +58,11 @@ char *DengueVirusClass::GetProtein()
 DengueVirusClass::DengueVirusClass(DengueVirusClass * dengueVirus)
 {
 	this->m_protein = dengueVirus->m_protein;
-	*this->m_dna = *dengueVirus->m_dna;
+	std::string str = dengueVirus->m_dna;
+	for (int i = 0;i < str.size();i++)
+	{
+		this->m_dna[i] = str[i];
+	}
 	this->m_resistance = dengueVirus->m_resistance;
 }
 
