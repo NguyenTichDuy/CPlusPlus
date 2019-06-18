@@ -70,6 +70,7 @@ void PatientClass::TakeMedicine(int medicine_resistance)
 	iter = m_virusList.begin();
 	while (iter != m_virusList.end())
 	{
+		
 		Sleep(50);
 		(*iter)->ReduceResistance(medicine_resistance);
 		if ((*iter)->GetResistance() > 0)
