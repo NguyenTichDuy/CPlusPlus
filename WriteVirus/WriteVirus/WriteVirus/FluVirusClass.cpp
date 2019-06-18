@@ -14,7 +14,7 @@ FluVirusClass::FluVirusClass()
 FluVirusClass::FluVirusClass(FluVirusClass * _fluVirus)
 {
 	this->m_color = _fluVirus->m_color;
-	//this->m_dna = _fluVirus->m_dna;
+	*this->m_dna = *_fluVirus->m_dna;
 	this->m_resistance = _fluVirus->m_resistance;
 }
 
