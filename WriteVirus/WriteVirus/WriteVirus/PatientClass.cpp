@@ -24,16 +24,11 @@ PatientClass::PatientClass()
 PatientClass::~PatientClass()
 {
 	DoDie();
-	for (auto v : m_virusList)
-	{
-		delete v;
-	}
-	m_virusList.clear();
 }
 
 void PatientClass::InitResistance()
 {
-	srand(time(NULL));
+	//srand(time(NULL));
 	this->m_resistance = rand() % (endResistance - startResistance + 1) + startResistance;
 	std::cout << "Resistance patient : " << m_resistance << std::endl;
 }
@@ -49,6 +44,7 @@ void PatientClass::DoBorn()
 
 void PatientClass::DoStart()
 {
+	srand(time(NULL));
 	int random = rand() % 2;
 	
 	for (int  i = 0; i < sumRandom; i++)
@@ -74,20 +70,20 @@ void PatientClass::TakeMedicine(int medicine_resistance)
 	iter = m_virusList.begin();
 	while (iter != m_virusList.end())
 	{
+		
 		Sleep(50);
-		VirusClass *virus = *iter;
-		virus->ReduceResistance(medicine_resistance);
-		if (virus->GetResistance() > 0)
+		(*iter)->ReduceResistance(medicine_resistance);
+		if ((*iter)->GetResistance() > 0)
 		{
-			sumResistanceOfVirus = virus->GetResistance();
+			sumResistanceOfVirus = (*iter)->GetResistance();
 
-			m_virusList.push_front(*(virus->DoClone()));
+			m_virusList.push_front(*((*iter)->DoClone()));
 			++iter;
 		}
 		else
 		{
-			iter = m_virusList.erase(iter);
-			//delete virus;
+			delete (*iter);
+			iter = m_virusList.erase(iter);		
 		}
 	}
 	std::cout << "Virus size: " << m_virusList.size() << std::endl;

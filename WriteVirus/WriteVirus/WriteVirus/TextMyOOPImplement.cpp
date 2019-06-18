@@ -2,6 +2,8 @@
 #include"DengueVirusClass.h"
 #include"PatientClass.h"
 #include<Windows.h>
+#include<vld.h>
+
 using namespace std;
 
 
@@ -15,12 +17,13 @@ int main()
 		cin >> t;
 		if(t == 1)
 		{
-			int min = 10;
-			int max = 20;
+			int min = 1;
+			int max = 10;
 			int _medicine_resistance = min + (rand() % (int)(max - min + 1));
 			p.TakeMedicine(_medicine_resistance);
 		}
 	}
+	//cout << typeid(FluVirusClass*).name() << endl;
+
 	system("pause");
-	return 0;
 }

@@ -58,7 +58,7 @@ char *DengueVirusClass::GetProtein()
 DengueVirusClass::DengueVirusClass(DengueVirusClass * dengueVirus)
 {
 	this->m_protein = dengueVirus->m_protein;
-	this->m_dna = dengueVirus->m_dna;
+	*this->m_dna = *dengueVirus->m_dna;
 	this->m_resistance = dengueVirus->m_resistance;
 }
 
@@ -100,12 +100,7 @@ VirusClass **DengueVirusClass::DoClone()
 
 void DengueVirusClass::DoDie()
 {
-	if (*dengueVirusCopyPtr != nullptr)
-	{
-		delete[] *dengueVirusCopyPtr;
-		*dengueVirusCopyPtr = nullptr;
 		std::cout << "Virus dengue is detroys" << std::endl;
-	}
 }
 
 void DengueVirusClass::InitResistance()
